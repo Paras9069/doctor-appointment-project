@@ -12,10 +12,12 @@ app.use(express.urlencoded({ extended: true })); // Parses form-encoded bodies
 app.listen(9000,(req,res)=>{
     console.log("server start at 9000")
 })
+mongoose.connect('mongodb+srv://hostel:paras12345@hostel.4fnadp1.mongodb.net/hostel?retryWrites=true&w=majority&appName=hostel', {
+  
+})
+.then(() => console.log('✅ Connected to MongoDB: hostel database'))
+.catch(err => console.log('❌ Error connecting to MongoDB:', err));
 
-mongoose.connect('mongodb://127.0.0.1:27017/doctor')
-.then(() => console.log('Connected to MongoDB: doctor database'))
-.catch(err => console.log('Error connecting to MongoDB:', err));
 
 //register page
 const registerschema=mongoose.Schema({
