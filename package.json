@@ -21,7 +21,8 @@
   },
   "scripts": {
     "server": "nodemon server.js",
-    "start": "react-scripts start",
+    "client": "react-scripts start",
+    "dev": "concurrently \"npm run server\" \"npm run client\" --kill-others --names \"SERVER,CLIENT\" -c \"blue,green\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
