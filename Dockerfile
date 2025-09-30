@@ -19,8 +19,8 @@ RUN npm install
 # Install concurrently globally to run frontend & backend together
 RUN npm install -g concurrently
 
-# Expose frontend (3000) and backend (9000 or whatever your server.js uses)
+# Expose frontend (3000) and backend (9000)
 EXPOSE 3000 9000
 
-# Run both React app and Express server (JSON/exec form)
-CMD ["concurrently", "npm start", "node server.js"]
+# Run the dev script (as defined in package.json)
+CMD ["npm", "run", "dev"]
